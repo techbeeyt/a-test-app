@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Avatars selection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+
+<body>
+    <div ng-app="app" ng-controller="AvatarsController">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <label class="col-sm-12 quiz-warning">
+                        Before completing this survey, please review the following avatars and select the one that best represents you.
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="text-align:center;">
+                <div class="welcome-text" style="margin-top:20px;">Avatars selection</div>
+                <br />
+                <p style="font-size:20px;">Below are several groups of avatars. Could you let us know which of the following avatars you would prefer to select for representing yourself on your Twitter account?
+                    <p style="font-size:20px;">Select a value for ALL the statements.
+            </div>
+
+            <div class="big-question-container">
+                    <form id="my-form" action="http://localhost:8080/avatar" method="post">
+                        <input type="hidden" name="userId" id="userId">
+                    
+                        <!-- Avatar Group 1: White Male -->
+                    <div class="avatar-selection">
+                        <input type="radio" id="group1" name="avatarSelection" ng-model="selectedAvatarGroup" value="White Male" required>
+                        <label for="group1" class="avatar-group-label">
+                            <img src="https://i.postimg.cc/RZcqTVCx/pixton-avatar-headshot-hamdah-4.png" alt="White Male Avatar 1" class="avatar-img">
+                            <img src="https://i.postimg.cc/Wbdk0vJs/pixton-avatar-headshot-hamdah-3.png" alt="White Male Avatar 2" class="avatar-img">
+                            <img src="https://i.postimg.cc/SK68jfY8/pixton-avatar-headshot-hamdah-2.png" alt="White Male Avatar 3" class="avatar-img">
+                            <img src="https://i.postimg.cc/Z5h50t87/pixton-avatar-headshot-hamdah.png" alt="White Male Avatar 4" class="avatar-img">
+                        </label>
+                    </div>
+                    <br>
+
+                    <!-- Avatar Group 2: White Female -->
+                    <div class="avatar-selection">
+                        <input type="radio" id="group2" name="avatarSelection" ng-model="selectedAvatarGroup" value="White Female" required>
+                        <label for="group2" class="avatar-group-label">
+                        <img src="https://i.postimg.cc/0NZVz07h/pixton-avatar-headshot-hamdah-2-copy.png" alt="White Female Avatar 1" class="avatar-img">
+                        <img src="https://i.postimg.cc/D0r39rwb/pixton-avatar-headshot-unnamed-2.png" alt="White Female Avatar 2" class="avatar-img">
+                        <img src="https://i.postimg.cc/x1dZKdPX/pixton-avatar-headshot-hamdah-6.png" alt="White Female Avatar 3" class="avatar-img">
+                        <img src="https://i.postimg.cc/fL4tN2zm/pixton-avatar-headshot-hamdah-copy-2.png" alt="White Female Avatar 4" class="avatar-img">
+                    </label>
+                    </div>
+                    <br>
+
+                    <!-- Avatar Group 3: Indian Male -->
+                    <div class="avatar-selection">
+                        <input type="radio" id="group3" name="avatarSelection" ng-model="selectedAvatarGroup" value="Indian Male" required>
+                        <label for="group3" class="avatar-group-label">
+                        <img src="https://i.postimg.cc/xC702WjP/pixton-avatar-headshot-hamdah-6.png" alt="Indian Male Avatar 1" class="avatar-img">
+                        <img src="https://i.postimg.cc/QNTBMbLM/pixton-avatar-headshot-hamdah-7.png" alt="Indian Male Avatar 2" class="avatar-img">
+                        <img src="https://i.postimg.cc/KYjjh7rx/pixton-avatar-headshot-hamdah-8.png" alt="Indian Male Avatar 3" class="avatar-img">
+                        <img src="https://i.postimg.cc/7P064Z7G/pixton-avatar-headshot-hamdah-9-copy.png" alt="Indian Male Avatar 4" class="avatar-img">
+                    </label>
+                    </div>
+                    <br>
+
+                    <!-- Avatar Group 4: Indian Female -->
+                    <div class="avatar-selection">
+                        <input type="radio" id="group4" name="avatarSelection" ng-model="selectedAvatarGroup" value="Indian Female" required>
+                        <label for="group4" class="avatar-group-label">
+                        <img src="https://i.postimg.cc/JhTSfLYy/pixton-avatar-headshot-hamdah-3.png" alt="Indian Female Avatar 1" class="avatar-img">
+                        <img src="https://i.postimg.cc/VvtT0bfM/pixton-avatar-headshot-hamdah-3-copy.png" alt="Indian Female Avatar 2" class="avatar-img">
+                        <img src="https://i.postimg.cc/VvxPT7ww/pixton-avatar-headshot-hamdah.png" alt="Indian Female Avatar 3" class="avatar-img">
+                        <img src="https://i.postimg.cc/wTt2B152/pixton-avatar-headshot-hamdah-7.png" alt="Indian Female Avatar 4" class="avatar-img">
+                    </label>
+                    </div>
+                    <br>
+
+                    <!-- Avatar Group 5: Asian Male -->
+                    <div class="avatar-selection">
+                        <input type="radio" id="group5" name="avatarSelection" ng-model="selectedAvatarGroup" value="Asian Male" required>
+                        <label for="group5" class="avatar-group-label">
+                        <img src="https://i.postimg.cc/PJJPK496/pixton-avatar-headshot-hamdah-7.png" alt="Asian Male Avatar 1" class="avatar-img">
+                        <img src="https://i.postimg.cc/qB6ttmcR/pixton-avatar-headshot-hamdah-9.png" alt="Asian Male Avatar 2" class="avatar-img">
+                        <img src="https://i.postimg.cc/vTxGcSpd/pixton-avatar-headshot-hamdah-8.png" alt="Asian Male Avatar 3" class="avatar-img">
+                        <img src="https://i.postimg.cc/1X0sGN5W/pixton-avatar-headshot-hamdah-10.png" alt="Asian Male Avatar 4" class="avatar-img">
+                    </label>
+                    </div>
+                    <br>
+
+                    <!-- Avatar Group 6: Asian Female -->
+                    <div class="avatar-selection">
+                        <input type="radio" id="group6" name="avatarSelection" ng-model="selectedAvatarGroup" value="Asian Female" required>
+                        <label for="group6" class="avatar-group-label">
+                        <img src="https://i.postimg.cc/xdyCrgWJ/pixton-avatar-headshot-hamdah-4.png" alt="Asian Female Avatar 1" class="avatar-img">
+                        <img src="https://i.postimg.cc/28g2QBvF/pixton-avatar-headshot-hamdah-11.png" alt="Asian Female Avatar 2" class="avatar-img">
+                        <img src="https://i.postimg.cc/jdRssLCc/pixton-avatar-headshot-hamdah-12.png" alt="Asian Female Avatar 3" class="avatar-img">
+                        <img src="https://i.postimg.cc/fbrwQF8b/pixton-avatar-headshot-hamdah-5.png" alt="Asian Female Avatar 4" class="avatar-img">
+                    </label>
+                    </div>
+                    <br>
+
+                    <!-- Avatar Group 7: African Male -->
+                    <div class="avatar-selection">
+                        <input type="radio" id="group7" name="avatarSelection" ng-model="selectedAvatarGroup" value="African Male" required>
+                        <label for="group7" class="avatar-group-label">
+                        <img src="https://i.postimg.cc/VkF89679/pixton-avatar-headshot-hamdah-3.png" alt="African Male Avatar 1" class="avatar-img">
+                        <img src="https://i.postimg.cc/jq6ZS7Ch/pixton-avatar-headshot-hamdah-4.png" alt="African Male Avatar 2" class="avatar-img">
+                        <img src="https://i.postimg.cc/C1dqrcpZ/pixton-avatar-headshot-hamdah-5.png" alt="African Male Avatar 3" class="avatar-img">
+                        <img src="https://i.postimg.cc/8CxKTKBv/pixton-avatar-headshot-hamdah-6.png" alt="African Male Avatar 4" class="avatar-img">
+                    </label>
+                    </div>
+                    <br>
+
+                    <!-- Avatar Group 8: African Female -->
+                    <div class="avatar-selection">
+                        <input type="radio" id="group8" name="avatarSelection" ng-model="selectedAvatarGroup" value="African Female" required>
+                        <label for="group8" class="avatar-group-label">
+                        <img src="https://i.postimg.cc/pX5sD6dP/pixton-avatar-headshot-hamdah.png" alt="African Female Avatar 1" class="avatar-img">
+                        <img src="https://i.postimg.cc/d0cQqph3/Unknown.png" alt="African Female Avatar 2" class="avatar-img">
+                        <img src="https://i.postimg.cc/KYDk8dx3/pixton-avatar-headshot-hamdah-2.png" alt="African Female Avatar 3" class="avatar-img">
+                        <img src="https://i.postimg.cc/DzSvtHmK/pixton-avatar-headshot-hamdah.png" alt="African Female Avatar 4" class="avatar-img">
+                    </label>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-sm-8" style="margin-top:10px;">
+                            <input id="submit-avatars" class="submit" type="submit" value="Submit Answers">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
