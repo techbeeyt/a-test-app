@@ -501,7 +501,7 @@ app.controller('QuizController', function($scope, $http, $window, $timeout) {
         $("input[type=textarea]").attr('disabled', false);
 
         //Handling the ending of the quiz and directing to the big five questionnaire
-        if ($scope.currentQIndex == 1 ) {
+        if ($scope.currentQIndex == 14 ) {
             //Disable the confirmation message
             $scope.onbeforeunloadEnabled = false;
             $window.location.href = './big-five.html';
