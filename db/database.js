@@ -2,7 +2,8 @@
 var mongoose = require('mongoose');
 // Add mongodb database uri here
 // var mongoDB = 'mongodb://localhost:27017/data';
-var mongoDB = 'mongodb+srv://m0nst3r:m0nst3r@cluster0.luynrqo.mongodb.net/newcsedb?retryWrites=true&w=majority';
+var mongoDB = 'mongodb+srv://NewData-Ex2:6Ok27048crf19JPi@experiment-2f63658b.mongo.ondigitalocean.com/Data-for-Study2?tls=true&authSource=admin&replicaSet=experiment';
+// var mongoDB = 'mongodb+srv://m0nst3r:m0nst3r@cluster0.luynrqo.mongodb.net/newcsedb?retryWrites=true&w=majority';
 
 
 
